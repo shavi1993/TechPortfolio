@@ -1,15 +1,28 @@
-const jwt = require('jsonwebtoken');
-require('dotenv').config();
+const jwt = require("jsonwebtoken");
 
-module.exports = (req, res, next) => {
-  const token = req.header('Authorization')?.replace('Bearer ', '');
-  if (!token) return res.status(401).json({ msg: 'Access denied' });
+const authMiddleware = (req, res, next) => {
+    try {
+        // Ensure cookies exist
+        if (!req.cookies || !req.cookies.auth_token) {
+            req.user = null;
+            return next();
+        }
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded;
-    next();
-  } catch (error) {
-    res.status(401).json({ msg: 'Invalid token' });
-  }
+        const token = req.cookies.auth_token; // Extract token
+        console.log(token,"test");
+
+        // Verify the token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        // Attach user info to `req.user`
+        req.user = decoded;
+        
+    } catch (error) {
+        console.error("JWT Verification Error:", error.message);
+        req.user = null; // Ensure `req.user` is null if token is invalid
+    }
+
+    next(); // Proceed to next middleware
 };
+
+module.exports = authMiddleware;

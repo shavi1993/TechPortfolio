@@ -11,7 +11,7 @@ exports.register = async (req, res) => {
   if (password !== confirmPassword) {
     return res.render('signup', {
       errorMessage: 'Passwords do not match.',
-  });
+    });
   }
   // Check if the user already exists
   User.findOne({ where: { email } })
@@ -34,7 +34,7 @@ exports.register = async (req, res) => {
       return res.render('signup', {
         message: "User registered successfully",
       });
-     
+
     })
     .catch(error => {
       return res.render('signup', {
@@ -42,26 +42,33 @@ exports.register = async (req, res) => {
         error: error || "Unknown error",
       });
     });
-  
+
 };
 
 // Login User
 exports.login = async (req, res) => {
   const { email, password } = req.body;
 
-  // try {
+  try {
     const user = await User.findOne({ where: { email } });
-    if (!user) return res.status(400).json({ msg: 'Invalid credentials' });
+    if (!user) return res.status(400).render("login", { error: "Invalid credentials" });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' });
+    if (!isMatch) return res.status(400).render("login", { error: "Invalid credentials" });
 
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    console.log(token)
-    return res.render('index', {
-      message: 'Login successfully.',
-  });
-  // } catch (error) {
-  //   res.status(500).json({ msg: 'Server error' });
-  // }
+    // Generate JWT Token
+    const token = jwt.sign(
+      { id: user.id, email: user.email, name: user.name }, // Include user details
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+    // Set token in HTTP-only cookie
+    res.cookie("auth_token", token, { httpOnly: true, maxAge: 3600000 }); // 1 hour expiry
+
+    // Redirect to home page with user details
+    return res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    return res.status(500).render("login", { error: "Server error" });
+  }
 };

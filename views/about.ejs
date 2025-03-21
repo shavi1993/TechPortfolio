@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - TechPortfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Include Header -->
+  <%- include('partials/header') %>
+
+  <!-- About Us Section -->
+  <main class="py-12">
+    <div class="max-w-screen-xl mx-auto px-6">
+      <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-8">About Us</h1>
+
+      <div class="bg-white p-8 rounded-lg shadow-lg">
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Welcome to <span class="font-semibold text-blue-600">TechPortfolio</span>, your go-to platform for building and showcasing your portfolio. We aim to provide developers, designers, and creatives a professional and elegant way to present their work online.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-6">Our Mission</h2>
+        <p class="text-gray-700 text-lg leading-relaxed mt-2">
+          Our mission is to empower individuals by providing them with an intuitive and easy-to-use platform where they can highlight their skills, showcase projects, and connect with potential clients or employers.
+        </p>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-6">Why Choose Us?</h2>
+        <ul class="list-disc list-inside text-gray-700 text-lg mt-2">
+          <li>Modern and responsive design for all devices.</li>
+          <li>Easy-to-use tools to create and customize your portfolio.</li>
+          <li>Secure login and authentication system.</li>
+          <li>Fast and scalable platform.</li>
+        </ul>
+
+        <h2 class="text-2xl font-semibold text-gray-900 mt-6">Get in Touch</h2>
+        <p class="text-gray-700 text-lg leading-relaxed mt-2">
+          Have questions or suggestions? Feel free to <a href="/contact" class="text-blue-600 hover:underline">contact us</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Include Footer -->
+  <%- include('partials/footer') %>
+
+</body>
+</html>

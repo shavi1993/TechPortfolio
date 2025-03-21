@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links Page</title>
+  <link href="/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="/custom.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+  <%- include('partials/header') %>
+    <!-- Main Content Section -->
+    <main class="py-12">
+      <div class="max-w-screen-xl mx-auto px-6">
+        <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-8">Let's stay connected. Follow me on your favorite platform!</h1>
+
+        <!-- Links Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Link Card -->
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div class="custom-class flex justify-center items-center h-16">
+              <i class="fab fa-linkedin text-pink-500 text-3xl"></i>
+            </div>
+          
+            <p class="mt-4 text-gray-600">Description for Link 1 goes here. Short and sweet!</p>
+            
+            <!-- Link with Edit Icon -->
+            <div class="custom-class flex items-center space-x-2 mt-4">
+              <a href="#" class="text-blue-600 hover:underline">Follow</a>
+              <a href="#" class="text-gray-500 hover:text-gray-700">
+                <i class="fa-solid fa-pen"></i>
+              </a>
+            </div>
+          </div>
+          
+
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div class="custom-class flex justify-center items-center h-16">
+              <i class="fab fa-github text-pink-500 text-3xl"></i>
+            </div>
+          
+            <p class="mt-4 text-gray-600">Description for Link 1 goes here. Short and sweet!</p>
+            
+            <!-- Link with Edit Icon -->
+            <div class="custom-class flex items-center space-x-2 mt-4">
+              <a href="#" class="text-blue-600 hover:underline">Follow</a>
+              <a href="#" class="text-gray-500 hover:text-gray-700">
+                <i class="fa-solid fa-pen"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div class="custom-class flex justify-center items-center h-16">
+              <i class="fab fa-facebook-f text-pink-500 text-3xl"></i>
+            </div>
+          
+            <p class="mt-4 text-gray-600">Description for Link 1 goes here. Short and sweet!</p>
+            
+            <!-- Link with Edit Icon -->
+            <div class="custom-class flex items-center space-x-2 mt-4">
+              <a href="#" class="text-blue-600 hover:underline">Follow</a>
+              <a href="#" class="text-gray-500 hover:text-gray-700">
+                <i class="fa-solid fa-pen"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div class="custom-class flex justify-center items-center h-16">
+              <i class="fa-brands fa-instagram text-pink-500 text-3xl"></i>
+            </div>
+          
+            <p class="mt-4 text-gray-600">Description for Link 1 goes here. Short and sweet!</p>
+            
+            <!-- Link with Edit Icon -->
+            <div class="custom-class flex items-center space-x-2 mt-4">
+              <a href="#" class="text-blue-600 hover:underline">Follow</a>
+              <a href="#" class="text-gray-500 hover:text-gray-700">
+                <i class="fa-solid fa-pen"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div class="custom-class flex justify-center items-center h-16">
+              <i class="fas fa-times text-pink-500 text-3xl"></i>
+            </div>
+          
+            <p class="mt-4 text-gray-600">Description for Link 1 goes here. Short and sweet!</p>
+            
+            <!-- Link with Edit Icon -->
+            <div class="custom-class flex items-center space-x-2 mt-4">
+              <a href="#" class="text-blue-600 hover:underline">Follow</a>
+              <a href="#" class="text-gray-500 hover:text-gray-700">
+                <i class="fa-solid fa-pen"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+            <div class="custom-class flex justify-center items-center h-16">
+              <i class="fab fa-youtube text-pink-500 text-3xl"></i>
+            </div>
+          
+            <p class="mt-4 text-gray-600">Description for Link 1 goes here. Short and sweet!</p>
+            
+            <!-- Link with Edit Icon -->
+            <div class="custom-class flex items-center space-x-2 mt-4">
+              <a href="#" class="text-blue-600 hover:underline">Subscribe</a>
+              <a href="#" class="text-gray-500 hover:text-gray-700">
+                <i class="fa-solid fa-pen"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Include Footer -->
+    <%- include('partials/footer') %>
+
+
+</body>
+
+</html>
